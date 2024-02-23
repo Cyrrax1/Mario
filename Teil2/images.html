@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SIEHE MEHR BILDER</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+
+        body, h1, h2, h3, h4, h5, h6 {
+            font-family: "Lato", sans-serif;
+            text-align: center
+        }
+
+        body, html {
+            height: 100%;
+            color: #777;
+            line-height: 1.8;
+        }
+
+        /* Add CSS styles for the grid layout */
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px; /* Adjust the gap between images as needed */
+            justify-items: center; /* Center images horizontally */
+        }
+
+        /* Add CSS styles for the images */
+        .image-grid img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .w3-button {
+            border: none;
+            display: inline-block;
+            padding: 8px 16px;
+            vertical-align: middle;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            background-color: inherit;
+            text-align: center;
+            cursor: pointer;
+            white-space: nowrap;
+            color: #000 !important;
+            background-color: #f1f1f1 !important;
+        }
+
+
+    </style>
+</head>
+<body>
+<!-- Header or title for the "See More Pictures" page -->
+<h1>Siehe mehr Bilder</h1>
+
+<!-- Create a grid layout for the pictures -->
+<div class="image-grid">
+    <!-- Add more image elements here as needed -->
+    <div>
+        <img src="../img/DSC_0853.png" onclick="onClick(this)" class="w3-hover-opacity" alt="New Image 1">
+    </div>
+
+    <div>
+        <img src="../img/DSC_0665.png" onclick="onClick(this)" class="w3-hover-opacity" alt="New Image 2">
+    </div>
+
+    <div>
+        <img src="../img/DSC_1812.png" onclick="onClick(this)" class="w3-hover-opacity" alt="New Image 2">
+    </div>
+
+    <div>
+        <img src="../img/DSC_1770.png" onclick="onClick(this)" class="w3-hover-opacity" alt="New Image 2">
+    </div>
+
+    <div>
+        <img src="../img/DSC_0929.png" onclick="onClick(this)" class="w3-hover-opacity" alt="New Image 2">
+    </div>
+
+    <div>
+        <img src="../img/DSC_0891.png" onclick="onClick(this)" class="w3-hover-opacity" alt="New Image 2">
+    </div>
+
+    <div>
+        <img src="../img/DSC_0632.png" onclick="onClick(this)" class="w3-hover-opacity" alt="New Image 2">
+    </div>
+
+    <div>
+        <img src="../img/DSC_0004.png" onclick="onClick(this)" class="w3-hover-opacity" alt="New Image 2">
+    </div>
+
+    <div>
+        <img src="../img/DSC_1013.png" onclick="onClick(this)" class="w3-hover-opacity" alt="New Image 2">
+    </div>
+
+    <div>
+        <img src="../img/DSC_0871-2.png" onclick="onClick(this)" class="w3-hover-opacity" alt="New Image 2">
+    </div>
+
+    <div>
+        <img src="../img/DSC_0923.png" onclick="onClick(this)" class="w3-hover-opacity" alt="New Image 2">
+    </div>
+
+</div>
+
+<div>
+    <a href="teil2.html">
+        <button class="w3-button" style="margin-top:64px">ZURÜCK</button>
+    </a>
+</div>
+
+<!-- Include any scripts if needed -->
+</body>
+</html>

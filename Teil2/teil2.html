@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>isolutions AG</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body, h1, h2, h3, h4, h5, h6 {
+            font-family: "Lato", sans-serif;
+        }
+
+        body, html {
+            height: 100%;
+            color: #777;
+            line-height: 1.8;
+        }
+
+        /* Navbar (sit on top) */
+        .w3-top {
+            background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+        }
+
+
+        /* Create a Parallax Effect */
+        .bgimg-1, .bgimg-2, .bgimg-3 {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* First image (Logo. Full height) */
+        .bgimg-1 {
+            min-height: 20%;
+        }
+
+        .bgimg-1 {
+            background-image: url('../img/isolution_Animation_extended.mp4');
+        }
+
+        /* Second image (Portfolio) */
+        .bgimg-2 {
+            background-image: url("../img/stimmungsbilder_1.png");
+            min-height: 400px;
+        }
+
+        /* Third image (Contact) */
+        .bgimg-3 {
+            background-image: url("../img/stimmungsbilder_2.png");
+            min-height: 400px;
+        }
+
+        .bgvideo {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1; /* Ensures the video stays in the background */
+        }
+
+        .w3-display-middle {
+            white-space: nowrap;
+            text-align: center; /* Center-align the content horizontally */
+        }
+
+        .w3-display-middle img {
+            max-width: 450px;
+            height: auto;
+        }
+
+
+        .w3-wide {
+            letter-spacing: 10px;
+        }
+
+        .w3-hover-opacity {
+            cursor: pointer;
+        }
+
+        /* Turn off parallax scrolling for tablets and phones */
+        @media only screen and (max-device-width: 1600px) {
+            .bgimg-1, .bgimg-2, .bgimg-3 {
+                background-attachment: scroll;
+                min-height: 400px;
+            }
+        }
+
+        .map-container {
+            display: flex;
+        }
+
+        .map {
+            flex: 2; /* Adjust the width as needed */
+            margin-right: 20px;
+        }
+
+        /* Adjust these styles as needed */
+        .map iframe {
+            width: 125%;
+            height: 450px;
+            border: 0;
+        }
+
+        .w3-bar-item.w3-button {
+            color: rgb(128, 128, 128);
+        }
+
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            padding-top: 100px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0); /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        /* The Close Button */
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+
+<video id="home" class="bgvideo" autoplay loop muted playsinline>
+    <source src="../img/isolution_Animation_extended.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+    <div class="w3-bar" id="myNavbar">
+        <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);"
+           onclick="toggleFunction()" title="Toggle Navigation Menu">
+            <i class="fa fa-bars"></i>
+        </a>
+        <a href="#home" class="w3-bar-item w3-button">HOME</a>
+        <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ÜBER</a>
+        <a href="#portfolio" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> GALERIE</a>
+        <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> KONTAKT</a>
+    </div>
+
+    <!-- Navbar on small screens -->
+    <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+        <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ÜBER</a>
+        <a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">GALERIE</a>
+        <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">KONTAKT</a>
+    </div>
+</div>
+
+<!-- First Parallax Image with Logo Text -->
+<div class="bgimg-1 w3-display-container w3-opacity-min">
+    <div class="w3-display-middle" style="white-space:nowrap;">
+        <img src="../img/isolutions_logo_passion_big.png" alt="Your Website Logo">
+    </div>
+</div>
+
+<!-- Container (About Section) -->
+<div class="w3-content w3-container w3-padding-64" style="text-align: justify" id="about">
+    <h3 class="w3-center">ÜBER ISOLUTIONS</h3>
+    <p class="w3-center"><em>We shape the future</em></p>
+    <p>
+        Bei isolutions gestalten wir die Zukunft. In einer Welt, die sich ständig weiterentwickelt, sind wir stolz
+        darauf, an vorderster Front der digitalen Transformation zu stehen.
+        Mit unserer tiefen Expertise in Microsoft Technologien sind wir nicht nur Technologie-Enthusiasten, sondern auch
+        Visionäre. Für uns ist es nicht nur ein Geschäft, sondern eine Leidenschaft.
+        Wir glauben, dass durch die richtige Technologie und Strategie Unternehmen nicht nur wachsen, sondern auch
+        florieren können.
+        Unsere Teams in Bern, Zürich, Basel und Barcelona sind mehr als nur Mitarbeiter - sie sind Innovatoren.
+        Jeden Tag arbeiten wir daran, das Mitarbeiter- und Kundenerlebnis zu verbessern, denn bei isolutions steht der
+        Mensch im Mittelpunkt.
+        Wir sind nicht nur hier, um Technologie zu implementieren, sondern um echte, nachhaltige Veränderungen
+        herbeizuführen. Gemeinsam gestalten wir die Zukunft - komm und sei Teil davon!</p>
+    <div class="w3-row">
+        <div class="w3-col m6 w3-center w3-padding-large">
+            <p><b><i class="fa fa-user w3-margin-right"></i>Terence Balestrieri</b></p><br>
+            <img src="../img/isolutions_team_Terence_Balestrieri_quadrat_648x648px.png" class="w3-round w3-image"
+                 alt="Photo of Me" width="500" height="333">
+        </div>
+
+        <!-- Hide this text on small devices -->
+        <div class="w3-col m6 w3-hide-small w3-padding-large" style="margin-top: 70px; text-align: left;">
+            <p>
+                Willkommen auf meiner Webseite! Ich befinde mich derzeit im zweiten Lehrjahr und schätze die
+                Erfahrungen, die ich in diesem Unternehmen sammle.
+                Die Arbeit hier bietet mir eine solide Grundlage für meine berufliche Entwicklung. Die täglichen
+                Aufgaben sind lehrreich und ich habe das Gefühl, dass ich stetig dazulerne.
+                Das Team ist professionell und die Arbeitsatmosphäre ist angenehm. Es ist gut zu wissen, dass ich in
+                einem Unternehmen bin, das Wert auf Qualität und Weiterbildung legt.
+                Während meiner Zeit hier habe ich viele nützliche Fähigkeiten erworben und freue mich darauf, was die
+                Zukunft noch bringen wird. Danke für Ihren Besuch und Ihr Interesse an meiner beruflichen Reise.
+                Es ist ein stetiger Lernprozess und ich bin froh, diesen Weg eingeschlagen zu haben.</p>
+        </div>
+    </div>
+    <p class="w3-large w3-center w3-padding-16">Worauf isolutions den Fokus legt:</p>
+    <p class="w3-wide"><i class="fa fa-cloud"></i>Cloud Services & Modern Work</p>
+    <div class="w3-light-grey">
+        <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:40%">40%</div>
+    </div>
+    <p class="w3-wide"><i class="fa fa-laptop"></i>Cybersecurity</p>
+    <div class="w3-light-grey">
+        <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:30%">30%</div>
+    </div>
+    <p class="w3-wide"><i class="fa fa-user-o"></i>Customer Experience & Business Solutions</p>
+    <div class="w3-light-grey">
+        <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:30%">30%</div>
+    </div>
+</div>
+
+<div class="w3-row w3-center w3-dark-grey w3-padding-16">
+    <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">14+</span><br>
+        Partners
+    </div>
+    <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">70%</span><br>
+        Hochschulabsolventen
+    </div>
+    <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">300+</span><br>
+        Zufriedene Kunden
+    </div>
+    <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">200+</span><br>
+        Mitarbeiter
+    </div>
+</div>
+
+<!-- Second Parallax Image with Portfolio Text -->
+<div class="bgimg-2 w3-display-container w3-opacity-min">
+    <div class="w3-display-middle">
+        <span class="w3-xxlarge w3-text-black w3-wide">PORTFOLIO</span>
+    </div>
+</div>
+
+<!-- Container (Portfolio Section) -->
+<div class="w3-content w3-container w3-padding-64" id="portfolio">
+    <h3 class="w3-center">GALERIE</h3>
+    <p class="w3-center"><em>Einige Bilder von der Firma.<br> Klicken Sie auf die Bilder, um sie zu vergrössern</em></p>
+    <br>
+
+    <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
+    <div class="w3-row-padding w3-center">
+        <div class="w3-col m3">
+            <img src="../img/DSC_0004.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity"
+                 alt="Meeting mit einem Kunden">
+        </div>
+
+        <div class="w3-col m3">
+            <img src="../img/DSC_0632.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity"
+                 alt="Besprechung mit dem Kunden">
+        </div>
+
+        <div class="w3-col m3">
+            <img src="../img/DSC_0891.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity"
+                 alt="Lustige Gespräche im Team">
+        </div>
+
+        <div class="w3-col m3">
+            <img src="../img/DSC_0929.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity"
+                 alt="Kurze Pause">
+        </div>
+    </div>
+
+    <div class="w3-row-padding w3-center w3-section">
+        <div class="w3-col m3">
+            <img src="../img/DSC_1770.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity"
+                 alt="Abwechslung mit Fussball">
+        </div>
+
+        <div class="w3-col m3">
+            <img src="../img/DSC_1812.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity"
+                 alt="Meeting im Meetingraum Saphir">
+        </div>
+
+        <div class="w3-col m3">
+            <img src="../img/DSC_0665.png" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity"
+                 alt="Kaffepause">
+        </div>
+
+        <div class="w3-col m3">
+            <img src=../img/DSC_0853.png style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="1to1">
+        </div>
+        <a href="images.html">
+            <button class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px">MEHR LADEN</button>
+        </a>
+    </div>
+</div>
+
+<!-- Modal for full size images on click-->
+<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+    <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+        <img id="img01" class="w3-image">
+        <p id="caption" class="w3-opacity w3-large"></p>
+    </div>
+</div>
+
+<!-- Third Parallax Image with Portfolio Text -->
+<div class="bgimg-3 w3-display-container w3-opacity-min">
+    <div class="w3-display-middle">
+        <span class="w3-xxlarge w3-text-black w3-wide">KONTAKT</span>
+    </div>
+</div>
+
+<!-- Container (Contact Section) -->
+<div class="w3-content w3-container w3-padding-64" id="contact">
+    <h3 class="w3-center">WO ICH ARBEITE:</h3>
+
+    <div class="w3-row w3-padding-32 w3-section">
+        <div class="map-container">
+            <!-- Map on the left -->
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d962.9631623566747!2d7.436702313117554!3d46.948502424349954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478e39b94be43a37%3A0x64a45f6cc1914a7b!2sSchanzenstrasse%204c%2C%203008%20Bern!5e0!3m2!1sde!2sch!4v1695564029827!5m2!1sde!2sch"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="w3-col m8 w3-panel" style="padding: 100px;">
+                <div class="w3-large w3-margin-bottom">
+                    <i class="fa fa-map fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Schanzenstrasse 4c<br>
+                    <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> 3008 Bern<br>
+                    <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Telefon: +41 31 560
+                    88 88<br>
+                    <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email:
+                    info@isolutions.ch<br>
+                </div>
+                <form action="/action_page.php" target="_blank">
+                    <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+                        <div class="w3-half">
+                            <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+                        </div>
+                        <div class="w3-half">
+                            <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+                        </div>
+                    </div>
+                    <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
+                    <button class="w3-button w3-black w3-left w3-section" type="submit">
+                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" style="text-decoration: none;">
+                            <i class="fa fa-paper-plane"></i> SENDEN
+                        </a>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <!-- Footer -->
+    <footer class="w3-center w3-padding-64 w3-opacity w3-hover-opacity-off">
+        <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>Zurück</a>
+        <!-- Trigger/Open The Modal -->
+        <button id="myBtn" class="w3-button w3-light-grey">Mehr über isolutions</button>
+    </footer>
+
+
+    <script>
+        // Modal Image Gallery
+        function onClick(element) {
+            document.getElementById("img01").src = element.src;
+            document.getElementById("modal01").style.display = "block";
+            var captionText = document.getElementById("caption");
+            captionText.innerHTML = element.alt;
+        }
+
+        // Change style of navbar on scroll
+        window.onscroll = function () {
+            myFunction()
+        };
+
+        function myFunction() {
+            var navbar = document.getElementById("myNavbar");
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+            } else {
+                navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+            }
+        }
+
+        // Used to toggle the menu on small screens when clicking on the menu button
+        function toggleFunction() {
+            var x = document.getElementById("navDemo");
+            if (x.className.indexOf("w3-show") === -1) {
+                x.className += " w3-show";
+            } else {
+                x.className = x.className.replace(" w3-show", "");
+            }
+        }
+
+    </script>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>isolutions - dein Partner für digitale Transformation</h2>
+            <p>isolutions ist ein führender Microsoft Partner in der Schweiz, der sich auf die digitale Transformation
+                von Unternehmen spezialisiert hat. Mit dem intelligenten Einsatz von Microsoft Technologien schaffen sie
+                ein digitales Mitarbeitererlebnis und Kundenerlebnis, das Effizienz und Erfolg steigert. Die Firma legt
+                grossen Wert auf Innovation, Begeisterung, Glaubwürdigkeit und Neugierde. Seit 1999 steht isolutions für
+                diese Werte und hat sich darauf spezialisiert, digitale Arbeitswelten zu schaffen, die Kreativität
+                fördern, intelligentes Zusammenarbeiten ermöglichen und positive Kundenerlebnisse schaffen.</p>
+            <h3>Kernbereiche von isolutions:</h3>
+            <ul>
+                <li>Beratung: Sie helfen Unternehmen, die beste Employee und Customer Experience zu erreichen.</li>
+                <li>Cloud Services: Sie bieten Strategieentwicklung, Migration und Transformation von IT-Abteilungen
+                    an.
+                </li>
+                <li>Cybersecurity: Sie helfen Unternehmen, ihre Cyberrisiken zu identifizieren und schützen Daten und
+                    Arbeitsplätze.
+                </li>
+                <li>Modern Work: Sie fördern die Produktivität und Zufriedenheit der Mitarbeiter durch moderne
+                    Arbeitsmittel.
+                </li>
+                <li>Customer Experience: Sie helfen Unternehmen, schneller und gezielter auf Kundenbedürfnisse
+                    einzugehen.
+                </li>
+                <li>Business Solutions: Sie bieten Lösungen für Applikationen, Daten und KI an.</li>
+            </ul>
+            <p>Zudem legt isolutions grossen Wert auf ihre Unternehmenskultur. Sie glauben an flache Hierarchien, offene
+                Feedback- und Unternehmenskultur und fördern die Mitarbeiterentwicklung. Sie bieten auch flexible
+                Arbeitsmodelle an, darunter Home Office und Workation.</p>
+            <h3>Drei Denkanstösse:</h3>
+            <ol>
+                <li>Wie kann die digitale Transformation eines Unternehmens dessen Effizienz und Kundenerlebnis
+                    verbessern?
+                </li>
+                <li>Welche Rolle spielt die Unternehmenskultur bei der erfolgreichen Umsetzung von digitalen Lösungen?
+                </li>
+                <li>Wie können moderne Technologien und Tools die Produktivität und Zufriedenheit der Mitarbeiter
+                    steigern?
+                </li>
+            </ol>
+        </div>
+    </div>
+
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+</div>
+</body>
+</html>

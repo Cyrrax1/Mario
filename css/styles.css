@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+body, h1, h2, h3, p {
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+header {
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: white;
+}
+
+.shopping-cart {
+    padding: 10px;
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+}
+
+.shopping-cart {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+
+.shoe-display {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+
+.shoe img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 15px;
+    transition: transform 0.3s;
+}
+
+.shoe img:hover {
+    transform: scale(1.02);
+}
+
+.shoe {
+    justify-content: center;
+}
+
+.shoe a {
+    display: inline-block;
+    width: 70%;
+    text-align: center;
+}
+
+.shoe a:hover img {
+    transform: scale(1.02);
+}
+
+.center-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 8px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+body {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+body.contact-page {
+    padding-top: 100px;
+}
+
+@media (min-width: 1441px) {
+    .shoe-display .center-text {
+        display: flex;
+    }
+}
+
+@media (max-width: 780px) {
+    .shoe-display .center-text {
+        display: none;
+    }
+}
+
+@media (max-width: 1440px) {
+    .shoe-display {
+        grid-template-columns: 1fr;
+    }
+
+    .shoe-display .center-text {
+        display: none;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar-collapse {
+        justify-content: center;
+    }
+}
+
+
+.title {
+    font-size: 2em;
+    font-weight: 700;
+/ margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.navbar {
+    margin-bottom: 0;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #555;
+}
+
+.hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+main {
+    padding-top: 60px;
+    padding-bottom: 20px;
+}
+
+.footer .instagram-icon {
+    color: white;
+    font-size: 24px;
+    padding: 8px;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.footer .instagram-icon:hover {
+    color: #E1306C;
+}
+
+label.required::after {
+    content: " *";
+    color: red;
+}
+
+.custom-height {
+    height: 70vh;
+}
+
+.legal-notice-link {
+    color: white;
+    text-decoration: none;
+}
+
+
+.legal-notice-link:hover {
+    color: #ccc;
+}
+
+body, h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+}
+
